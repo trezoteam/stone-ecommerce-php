@@ -1,6 +1,6 @@
 <?php
 
-namespace Gateway\One\DataContract\Request\CreateSaleRequestData;
+namespace Gateway\One\DataContract\Request;
 
 use Gateway\One\DataContract\Common\BaseObject;
 use Gateway\One\DataContract\Common\Address;
@@ -11,32 +11,33 @@ use Gateway\One\DataContract\Enum\EmailTypeEnum;
  * Class Buyer
  * @package Gateway\One\DataContract\Request\CreateSaleRequestData
  */
-class Buyer extends BaseObject
+class CreateBuyerRequest extends BaseObject
 {
+
+    /**
+     * @var string Data de nascimento do comprador
+     */
+    protected $Birthdate;
+
     /**
      * @var string Identificação do comprador na plataforma One
      */
     protected $BuyerKey;
 
     /**
-     * @var string Nome do comprador
+     * @var BuyerCategoryEnum Categoria do cliente na plataforma One
      */
-    protected $Name;
-
-    /**
-     * @var string Tipo de pessoa
-     */
-    protected $PersonType;
+    protected $BuyerCategory;
 
     /**
      * @var string Referência do comprador no sistema da loja
      */
     protected $BuyerReference;
 
-    /**
-     * @var BuyerCategoryEnum Categoria do cliente na plataforma One
+     /**
+     * @var string Data do cadastro do comprador na plataforma da loja
      */
-    protected $BuyerCategory;
+    protected $CreateDateInMerchant;
 
     /**
      * @var string Número do documento
@@ -59,6 +60,11 @@ class Buyer extends BaseObject
     protected $EmailType;
 
     /**
+     * @var string Identificação do comprador no Facebook
+     */
+    protected $FacebookId;
+
+    /**
      * @var string Sexo do comprador
      */
     protected $Gender;
@@ -69,29 +75,24 @@ class Buyer extends BaseObject
     protected $HomePhone;
 
     /**
+     * @var Data da última atualização do cadastro do comprador na plataforma da loja
+     */
+    protected $LastBuyerUpdateInMerchant;
+
+    /**
      * @var string Telefone celular do comprador
      */
     protected $MobilePhone;
 
     /**
-     * string Telefone de trabalho do comprador
+     * @var string Nome do comprador
      */
-    protected $WorkPhone;
+    protected $Name;
 
     /**
-     * @var string Data de nascimento do comprador
+     * @var string Tipo de pessoa
      */
-    protected $BirthDate;
-
-    /**
-     * @var Address[] Coleção de endereços do comprador.
-     */
-    protected $AddressCollection;
-
-    /**
-     * @var string Identificação do comprador no Facebook
-     */
-    protected $FacebookId;
+    protected $PersonType;
 
     /**
      * @var string Identificação do comprador no Twitter
@@ -99,14 +100,15 @@ class Buyer extends BaseObject
     protected $TwitterId;
 
     /**
-     * @var string Data do cadastro do comprador na plataforma da loja
+     * string Telefone de trabalho do comprador
      */
-    protected $CreateDateInMerchant;
+    protected $WorkPhone;
 
     /**
-     * @var Data da última atualização do cadastro do comprador na plataforma da loja
+     * @var Address[] Coleção de endereços do comprador.
      */
-    protected $LastBuyerUpdateInMerchant;
+    protected $AddressCollection;
+
 
     /**
      *
@@ -326,6 +328,25 @@ class Buyer extends BaseObject
     }
 
     /**
+     * @return string 
+     */
+    public function getIpAddress()
+    {
+        return $this->IpAdress;
+    }
+
+    /**
+     * @param string $ipAddress
+     * @return $this
+     */
+    public function setIpAddress($ipAddress)
+    {
+        $this->IpAdress = $ipAddress;
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getMobilePhone()
@@ -361,23 +382,23 @@ class Buyer extends BaseObject
         $this->WorkPhone = $workPhone;
 
         return $this;
-    }    
+    }
 
     /**
      * @return string
      */
-    public function getBirthDate()
+    public function getBirthdate()
     {
-        return \DateTime::createFromFormat('Y-m-d\TH:i:s', $this->BirthDate);
+        return \DateTime::createFromFormat('Y-m-d\TH:i:s', $this->Birthdate);
     }
 
     /**
      * @param \DateTime $birthDate
      * @return $this
      */
-    public function setBirthDate(\DateTime $birthDate)
+    public function setBirthdate(\DateTime $birthdate)
     {
-        $this->BirthDate = $birthDate->format('Y-m-d\TH:i:s');
+        $this->Birthdate = $birthdate->format('Y-m-d\TH:i:s');
 
         return $this;
     }
