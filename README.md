@@ -1,17 +1,34 @@
 # Stone PHP Library
+[![Latest Stable Version](https://poser.pugx.org/stone-pagamentos/stone-ecommerce-php/version)](https://packagist.org/packages/stone-pagamentos/stone-ecommerce-php)
+[![License](https://poser.pugx.org/stone-pagamentos/stone-ecommerce-php/license)](https://packagist.org/packages/stone-pagamentos/stone-ecommerce-php)
 
-## Composer
+## Getting Started
+Simple PHP SDK to ease the integration with Stone payment solutions
 
-    $ composer require stone-pagamentos/stone-ecommerce-php
+### Installing
+There are two ways to install this SDK, the next sections will guide you through manual installation and using composer.
 
-## Manual installation
-
+#### Manual installation
 ```php
 require __DIR__ . '/stone-ecommerce-php/init.php';
 ```
 
-## Getting started
+#### Composer
+```bash
+$ composer require stone-pagamentos/stone-ecommerce-php
+```
 
+### Running tests
+To run tests you have to clone this repository
+
+```
+$ git clone git@github.com:stone-payments/stone-ecommerce-php.git
+$ cd stone-ecommerce-php
+$ composer install
+$ vendor/bin/phpunit
+```
+
+### Usage example
 ```php
 try
 {
@@ -72,7 +89,8 @@ finally
 }
 ```
 
-## Simulator rules by amount
+## Simulation values
+You can use these values to get specific responses from API
 
 ### Authorization
 
@@ -94,5 +112,9 @@ finally
 * `<= $ 1.050,00 -> Refunded`
 * `>= $ 1.050,01 -> Not Refunded`
 
+## Releases
+For a list with all releases, please refer to [releases page](https://github.com/stone-payments/stone-ecommerce-php/releases)
+
 ## More Information
-Access the SDK Wiki [HERE](https://github.com/stone-pagamentos/stone-ecommerce-php/wiki).
+For more information, please refer to our [wiki](https://github.com/stone-pagamentos/stone-ecommerce-php/wiki).
+
