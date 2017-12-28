@@ -1,6 +1,7 @@
 # Stone PHP Library
 [![Latest Stable Version](https://poser.pugx.org/stone-pagamentos/stone-ecommerce-php/version)](https://packagist.org/packages/stone-pagamentos/stone-ecommerce-php)
 [![License](https://poser.pugx.org/stone-pagamentos/stone-ecommerce-php/license)](https://packagist.org/packages/stone-pagamentos/stone-ecommerce-php)
+[![Build Status](https://travis-ci.org/stone-payments/stone-ecommerce-php.svg?branch=master)](https://travis-ci.org/stone-payments/stone-ecommerce-php)
 
 ## Getting Started
 Simple PHP SDK to ease the integration with Stone payment solutions
