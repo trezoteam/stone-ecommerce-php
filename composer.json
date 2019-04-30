@@ -4,6 +4,7 @@
     "keywords": ["gateway", "stone", "pagamento", "payment"],
     "homepage": "http://www.stone.com.br/en/",
     "license": "MIT",
+    "version": "1.3.5",
     "autoload": {
         "psr-4": { "Gateway\\" : "lib/" }
     },
